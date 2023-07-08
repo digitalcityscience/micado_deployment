@@ -679,6 +679,11 @@ services:
       - "traefik.http.routers.git2.tls.certresolver=myresolver"
       - "traefik.http.routers.git2.service=git2"
       - "traefik.http.services.git2.loadbalancer.server.port=3000"
+    ports:
+      - target: 3000
+        published: 3000
+        protocol: tcp
+        mode: host
     volumes:
       - git_data:/data
       - /etc/timezone:/etc/timezone:ro

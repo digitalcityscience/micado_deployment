@@ -1,2 +1,12 @@
 db_data/*
 mongo_data/*
+
+fail2ban_logs/*
+
+api_manager_data/*
+
+identity-server_data/* 
+
+metabase/*
+
+tusd_data/*

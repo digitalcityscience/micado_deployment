@@ -1,8 +1,9 @@
 #!/bin/bash
+
+api_manager_dir=api_manager_data
+
+
 echo $'\e[1;32mThis is the installer of the MICADO platform\e[0m '
-
-
-
 
 do_install=y
 [[ -t 0 ]] && {                   # Timeout 5 seconds (read -t 5)
@@ -15,6 +16,7 @@ then
 
     echo -e "\033[0;34m\nCreating folders\e[0m "
     mkdir -p translations_dir db_data weblate_data redis_data identity-server_data/deployment identity-server_data/tenants shared_images identity-server/repository/resources/security/
+    mkdir -p fail2ban_logs $api_manager_dir/ $api_manager_dir/database/ $api_manager_dir/executionplans/ $api_manager_dir/solr/ $api_manager_dir/synapse-configs/ $api_manager_dir/tenants identity-server_data/ metabase/ mongo_data/ tusd_data/
     chmod 777 shared_images
     chmod 777 translations_dir
     touch traefik/traefik-acme/acme.json
